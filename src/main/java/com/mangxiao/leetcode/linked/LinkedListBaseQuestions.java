@@ -1,4 +1,8 @@
 package com.mangxiao.leetcode.linked;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 /**
  * @description: questions of array
  * @author : mangxiao2018@126.com
@@ -6,7 +10,7 @@ package com.mangxiao.leetcode.linked;
  * @since 1.0
  */
 public class LinkedListBaseQuestions {
-
+    private static Log log = LogFactory.getLog(LinkedListBaseQuestions.class);
     private Node head;
 
     public LinkedListBaseQuestions(){
@@ -32,7 +36,7 @@ public class LinkedListBaseQuestions {
      */
     public void insertNode(int index, Node node){
         if(index < 1 || index > length() + 1){
-            //
+            log.error("Error of input for length.");
             return;
         }
         int length = 1;
@@ -59,5 +63,9 @@ public class LinkedListBaseQuestions {
             temp = temp.next;
         }
         return length;
+    }
+
+    public static void main(String[] args){
+        log.debug("test logback");
     }
 }
