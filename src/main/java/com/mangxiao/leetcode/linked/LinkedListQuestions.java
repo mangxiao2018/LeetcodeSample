@@ -10,6 +10,7 @@ public class LinkedListQuestions {
 
     /**
      * 160. Intersection of Two Linked Lists (Easy)
+     * 找出两个链表的交点
      * 例如以下示例中 A 和 B 两个链表相交于 c1：
      *
      * A:          a1 → a2
@@ -41,6 +42,21 @@ public class LinkedListQuestions {
         return l1;
     }
 
-
+    /**
+     * 206.Reverse Linked List(Easy)
+     * 递归
+     * @param head
+     * @return
+     */
+    public Node reverseList(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        Node next = head.next;
+        Node newHead = reverseList(next);
+        next.next = head;
+        head.next = null;
+        return newHead;
+    }
 
 }
