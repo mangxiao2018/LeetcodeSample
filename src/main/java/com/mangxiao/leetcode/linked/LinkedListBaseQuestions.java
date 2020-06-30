@@ -4,7 +4,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * @description: questions of array
+ * @description: questions of LinkedList
  * @author : mangxiao2018@126.com
  * @date:2020-6-28
  * @since 1.0

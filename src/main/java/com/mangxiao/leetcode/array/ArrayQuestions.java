@@ -1,4 +1,4 @@
-package com.mangxiao.leetcode;
+package com.mangxiao.leetcode.array;
 
 /**
  * @description: questions of array

@@ -1,7 +1,7 @@
 package com.mangxiao.leetcode.linked;
 
 /**
- * @description: questions of array
+ * @description: questions of LinkedList
  * @author : mangxiao2018@126.com
  * @date:2020-6-28
  * @since 1.0
