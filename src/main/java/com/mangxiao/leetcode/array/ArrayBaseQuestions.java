@@ -19,7 +19,7 @@ public class ArrayBaseQuestions {
     /**
      * 初始化这个一维整形数组
      */
-    void init(){
+    void init1Dimen(){
         arrs = new int[10];
         Random r = new Random(1000);
         for(int i = 0; i< arrs.length; i++){
@@ -139,8 +139,8 @@ public class ArrayBaseQuestions {
     }
     public static void main(String[] args){
         ArrayBaseQuestions ads = new ArrayBaseQuestions();
-        ads.init();
-        ads.traverse(ads.arrs);
+        log.debug("=========初始化并测试2维数组==========================");
+        // 初始化并测试2维数组
         int m = 10;
         int n = 10;
         double[][] x = ads.init2Dimen(m,n);
@@ -149,5 +149,11 @@ public class ArrayBaseQuestions {
                 log.debug(x[i][j]);
             }
         }
+        log.debug("=========初始化并测试1维数组==========================");
+        // 初始化并测试1维数组
+        ads.init1Dimen();
+        ads.traverse(ads.arrs);
+
+
     }
 }
