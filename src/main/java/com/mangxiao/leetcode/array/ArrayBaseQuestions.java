@@ -154,6 +154,6 @@ public class ArrayBaseQuestions {
         ads.init1Dimen();
         ads.traverse(ads.arrs);
 
-
+      
     }
 }
