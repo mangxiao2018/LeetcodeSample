@@ -65,7 +65,33 @@ public class LinkedListBaseQuestions {
         return length;
     }
 
+    /**
+     * 打印链表数据值
+     * @param node
+     */
+    public void getList(Node node){
+        while (node != null){
+            log.debug("Node.data:" + node.data);
+            node = node.next;
+        }
+    }
+
     public static void main(String[] args){
         log.debug("test logback");
+        LinkedListBaseQuestions lbq = new LinkedListBaseQuestions();
+        Node node_1 = new Node(1);
+        lbq.addNode(node_1);
+        Node node_2 = new Node(2);
+        lbq.addNode(node_2);
+        Node node_3 = new Node(3);
+        lbq.addNode(node_3);
+        log.debug("length:" + lbq.length());
+        // 插入节点测试
+        Node node_4 = new Node(4);
+        lbq.insertNode(2,node_4);
+        log.debug("length:" + lbq.length());
+        // 打印链表各节点数据值
+        lbq.getList(node_1);
+
     }
 }
