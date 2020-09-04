@@ -17,7 +17,7 @@ public class ArrayBaseQuestions {
     private double[] darrx = {6.0,7.0,8.0,9.0,10.0};
 
     /**
-     * 初始化这个一维整形数组
+     * 初始化这个一维整形数组 dimension:维度
      */
     void init1Dimen(){
         arrs = new int[10];
@@ -29,9 +29,10 @@ public class ArrayBaseQuestions {
 
     /**
      * 迭代遍历出这个一维整形数组
+     * Traversal:遍历
      * @param arr
      */
-    void traverse(int[] arr){
+    void traversal(int[] arr){
         for(int i = 0; i < arr.length; i++){
             // 迭代遍历arr
             System.out.println(arr[i]);
