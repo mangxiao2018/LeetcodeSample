@@ -8,6 +8,24 @@ package com.mangxiao.leetcode.array;
  */
 public class ArrayQuestions {
 
-    
+    private static Log log = LogFactory.getLog(ArrayQuestions.class);
+
+    /**
+     * 用Random初始化一维数组
+     * @return
+     */
+    int[] init(){
+        int[] arr = new int[5];
+        Random r = new Ramdom(1000);
+        for(int i=0; i<arr.length; i++){
+            arr[i] = r.nextInt();
+        }
+        return arr;
+    }
+
+    public static void main(String[] args){
+        ArrayQuestions aq = new ArrayQuestions();
+        aq.init();
+    }
 
 }
