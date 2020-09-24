@@ -11,7 +11,7 @@ import java.util.Random;
 public class ArrayBaseQuestions {
     private static Log log = LogFactory.getLog(ArrayBaseQuestions.class);
     /**定义一个一维空整型数组*/
-    private int[] arrs;
+    private static int[] arrs;
     /** 默认大小 */
     private int DEFAULT_SIZE = 10;
     private Double[] darrs = new Double[5];
@@ -142,23 +142,64 @@ public class ArrayBaseQuestions {
 
     /**
      * 初始化一维数组
+     * 预留2个空位给尾插入练习用
      * @param length
      */
     public void init(int length){
-        if (length > 0){
+        if (length >= 2){
             arrs = new int[length];
         }else {
             arrs = new int[DEFAULT_SIZE];
         }
+        // 初始化数组
+        Random r = new Random(1000);
+        for (int i = 0; i < arrs.length - 2; i++){
+            arrs[i] = r.nextInt();
+        }
     }
 
     /**
-     * 给默认数组插入数据值
+     * 给默认数组插入数据值-尾部插入
      * @param value
      */
     public void add(int value){
-        arrs.length
+        log.info("arrs.length:" + arrs.length);
+        ArrayBaseQuestions ads = new ArrayBaseQuestions();
+        ads.print("ADDPRINT");
+        for (int i = 0; i<arrs.length; i++){
+            if (arrs[i] == 0 ){
+                arrs[i] = value;
+                break;
+            }
+        }
     }
+
+    /**
+     * 给默认数组插入数据值-在指定位置插入
+     * 如：arrs = [2][3][1][5][4]
+     * 在[3]后[1]前插入新值
+     * @param index
+     * @param value
+     */
+    public void add(int index, int value){
+        int[] temp = new int[arrs.length + 1];
+    }
+
+    /**
+     * 打印数组
+     */
+    public void print(String flag){
+        log.info("==============[-"+ flag+"-]===============");
+        if(null == arrs || arrs.length == 0){
+            log.info("The arrs is null or length is zero.");
+            return;
+        }
+        for (int i=0; i<arrs.length; i++){
+            log.info(arrs[i]);
+        }
+        log.info("==============[-PRINT-END-]===============");
+    }
+
     public static void main(String[] args){
         ArrayBaseQuestions ads = new ArrayBaseQuestions();
         log.debug("=========初始化并测试2维数组==========================");
@@ -176,6 +217,9 @@ public class ArrayBaseQuestions {
         ads.init1Dimen();
         //ads.traverse(ads.arrs);
 
-      
+        ads.init(5);
+        ads.add(100);
+        ads.print("MAIN");
     }
+
 }
