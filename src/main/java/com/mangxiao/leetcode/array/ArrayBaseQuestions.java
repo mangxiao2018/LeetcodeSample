@@ -207,6 +207,26 @@ public class ArrayBaseQuestions {
     }
 
     /**
+     * 删除1维数组指定index位置数据
+     * @param index
+     */
+    public void delete(int index){
+        int[] temp = new int[arrs.length];
+        for (int i=0; i<arrs.length; i++){
+            if (index != i){
+                if(i > index){
+                    temp[i-1] = arrs[i];
+                }else{
+                    temp[i] = arrs[i];
+                }
+            }
+        }
+        arrs = new int[temp.length];
+        arrs = temp;
+        ArrayBaseQuestions ads = new ArrayBaseQuestions();
+        ads.print("DELETE-AFTER-PRINT-RESULT");
+    }
+    /**
      * 打印数组
      */
     public void print(String flag){
@@ -238,9 +258,14 @@ public class ArrayBaseQuestions {
         ads.init1Dimen();
         //ads.traverse(ads.arrs);
         log.debug("=========初始化并测试1维数组==========================");
+        //初始化1维数组
         ads.init(5);
+        //1维数组尾部插入
         ads.add(100);
+        //1维数组指定index位置插入
         ads.add(2,2000);
+        //1维数组指定index位置元素删除
+        ads.delete(2);
     }
 
 }
