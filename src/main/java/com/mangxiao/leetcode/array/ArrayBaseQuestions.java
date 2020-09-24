@@ -241,6 +241,15 @@ public class ArrayBaseQuestions {
         ArrayBaseQuestions ads = new ArrayBaseQuestions();
         ads.print("MODIFY-AFTER-PRINT-RESULT");
     }
+    public int query(int value){
+        int index = 0;
+        for (int i=0; i<arrs.length; i++){
+            if(value == arrs[i]){
+                index = i;
+            }
+        }
+        return index;
+    }
     /**
      * 打印数组
      */
@@ -283,6 +292,9 @@ public class ArrayBaseQuestions {
         ads.delete(2);
         //1维数组指定index位置元素修改
         ads.modify(2,3000);
+        //1维数组查找指定值对应的index
+        int index = ads.query(3000);
+        log.info("query 3000`s index:" + index);
     }
 
 }
