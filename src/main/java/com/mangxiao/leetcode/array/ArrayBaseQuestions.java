@@ -226,6 +226,21 @@ public class ArrayBaseQuestions {
         ArrayBaseQuestions ads = new ArrayBaseQuestions();
         ads.print("DELETE-AFTER-PRINT-RESULT");
     }
+
+    /**
+     * 指定index位置元素的更新
+     * @param index
+     * @param value
+     */
+    public void modify(int index, int value){
+        for (int i=0; i<arrs.length;i++){
+            if(i == index){
+                arrs[i] = value;
+            }
+        }
+        ArrayBaseQuestions ads = new ArrayBaseQuestions();
+        ads.print("MODIFY-AFTER-PRINT-RESULT");
+    }
     /**
      * 打印数组
      */
@@ -266,6 +281,8 @@ public class ArrayBaseQuestions {
         ads.add(2,2000);
         //1维数组指定index位置元素删除
         ads.delete(2);
+        //1维数组指定index位置元素修改
+        ads.modify(2,3000);
     }
 
 }
