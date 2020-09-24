@@ -165,7 +165,7 @@ public class ArrayBaseQuestions {
     public void add(int value){
         log.info("arrs.length:" + arrs.length);
         ArrayBaseQuestions ads = new ArrayBaseQuestions();
-        ads.print("ADDPRINT");
+        ads.print("ADDPRINT-END-INSERT");
         for (int i = 0; i<arrs.length; i++){
             if (arrs[i] == 0 ){
                 arrs[i] = value;
@@ -183,6 +183,27 @@ public class ArrayBaseQuestions {
      */
     public void add(int index, int value){
         int[] temp = new int[arrs.length + 1];
+        if(index > arrs.length - 1){
+            log.info("This index greater than arrs.length.");
+            return;
+        }
+        ArrayBaseQuestions ads = new ArrayBaseQuestions();
+        ads.print("ADDPRINT-MID-INSERT");
+        for (int i=0; i<temp.length; i++){
+            log.info("starting judge.");
+            if (i==index){
+                temp[i] = value;
+            }else{
+                if(i>index){
+                    temp[i] = arrs[i-1];
+                }else{
+                    temp[i] = arrs[i];
+                }
+            }
+        }
+        arrs = new int[temp.length];
+        arrs = temp;
+        ads.print("ADD-AFTER-PRINT-RESULT");
     }
 
     /**
@@ -212,14 +233,14 @@ public class ArrayBaseQuestions {
                 log.debug(x[i][j]);
             }
         }
-        log.debug("=========初始化并测试1维数组==========================");
+
         // 初始化并测试1维数组
         ads.init1Dimen();
         //ads.traverse(ads.arrs);
-
+        log.debug("=========初始化并测试1维数组==========================");
         ads.init(5);
         ads.add(100);
-        ads.print("MAIN");
+        ads.add(2,2000);
     }
 
 }
