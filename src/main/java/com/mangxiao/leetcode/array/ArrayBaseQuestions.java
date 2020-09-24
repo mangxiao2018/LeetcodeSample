@@ -12,7 +12,8 @@ public class ArrayBaseQuestions {
     private static Log log = LogFactory.getLog(ArrayBaseQuestions.class);
     /**定义一个一维空整型数组*/
     private int[] arrs;
-
+    /** 默认大小 */
+    private int DEFAULT_SIZE = 10;
     private Double[] darrs = new Double[5];
     private double[] darrx = {6.0,7.0,8.0,9.0,10.0};
 
@@ -138,6 +139,26 @@ public class ArrayBaseQuestions {
         }
         return arrs;
     }
+
+    /**
+     * 初始化一维数组
+     * @param length
+     */
+    public void init(int length){
+        if (length > 0){
+            arrs = new int[length];
+        }else {
+            arrs = new int[DEFAULT_SIZE];
+        }
+    }
+
+    /**
+     * 给默认数组插入数据值
+     * @param value
+     */
+    public void add(int value){
+        arrs.length
+    }
     public static void main(String[] args){
         ArrayBaseQuestions ads = new ArrayBaseQuestions();
         log.debug("=========初始化并测试2维数组==========================");
@@ -153,7 +174,7 @@ public class ArrayBaseQuestions {
         log.debug("=========初始化并测试1维数组==========================");
         // 初始化并测试1维数组
         ads.init1Dimen();
-        ads.traverse(ads.arrs);
+        //ads.traverse(ads.arrs);
 
       
     }
