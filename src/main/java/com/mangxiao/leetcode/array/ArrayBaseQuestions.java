@@ -228,6 +228,21 @@ public class ArrayBaseQuestions {
     }
 
     /**
+     * 删除指定value值，不需要额存储
+     * @param value
+     * @param flag
+     */
+    public void delete(int value, int flag){
+        int i = 0;
+        for(int j=0; j<arrs.length; j++){
+            if(value != arrs[j]){
+                arrs[i] = arrs[j];
+                i++;
+            }
+        }
+    }
+
+    /**
      * 指定index位置元素的更新
      * @param index
      * @param value
