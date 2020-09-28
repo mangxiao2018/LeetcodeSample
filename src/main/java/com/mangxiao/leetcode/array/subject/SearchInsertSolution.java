@@ -58,6 +58,10 @@ public class SearchInsertSolution {
 
     /**
      * LEETCODE
+     * 二分查找算法：
+     * 1.先设定左侧下标left和右侧下标right,再计算中间下标mid
+     * 2.每次根据nums[mid]和target之间的大小进行判断，相等则直接返回下标，nums[mid]<target,则left右移，nums[mid]>target则right左移
+     * 3.查找结束如果没有相等值则返回left,该值为插入位置
      * @param nums
      * @param target
      * @return
@@ -67,6 +71,7 @@ public class SearchInsertSolution {
         int left = 0, right = n - 1, ans = n;
         while (left <= right) {
             int mid = ((right - left) >> 1) + left;
+            log.info("mid:" + mid);
             if (target <= nums[mid]) {
                 ans = mid;
                 right = mid - 1;
